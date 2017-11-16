@@ -1,3 +1,0 @@
-[submodule "src/hiob"]
-	path = src/hiob
-	url = git@git.informatik.uni-hamburg.de:wtm/hierarchical-object-tracking.git
