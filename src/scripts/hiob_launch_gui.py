@@ -6,5 +6,5 @@ import os
 from hiob import hiob_gui
 
 if __name__ == '__main__':
-    os.chdir("./hiob")
+    os.chdir(os.path.join(os.path.dirname(__file__), "hiob"))
     hiob_gui.main()
