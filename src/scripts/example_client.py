@@ -7,7 +7,7 @@ import hiob_ros.msg
 def subscribe():
     print("subscribing...")
     rospy.init_node('hiob_example_client', anonymous=True)
-    rospy.Subscriber('/hiob/objects/0', hiob_ros.msg.TrackingResult, receive_message)
+    rospy.Subscriber('/core/objects/0', hiob_ros.msg.TrackingResult, receive_message)
 
 
 def receive_message(tracking_result):
