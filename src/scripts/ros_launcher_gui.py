@@ -1,6 +1,3 @@
-#!/home/tobias/informatics/python/venv/hiob/bin/python
-# PYTHONPATH=.. python hy1.py
-
 import os
 import rospy
 

@@ -1,5 +1,5 @@
 hiob_cli
 os
 rospy
-
+venv/
 \.idea/

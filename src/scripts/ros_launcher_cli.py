@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# export MPLBACKEND="agg"
-# PYTHONPATH=.. python hy1.py
-
 import os
 import rospy
 
