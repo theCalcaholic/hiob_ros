@@ -3,3 +3,5 @@ os
 rospy
 venv/
 \.idea/
+
+hiob_ros\.msg
