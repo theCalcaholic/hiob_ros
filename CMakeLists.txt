@@ -20,7 +20,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-# catkin_python_setup()
+catkin_python_setup()
+
+#add_subdirectory(venv)
+#add_subdirectory(scripts)
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -70,11 +73,11 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
- generate_messages(
-   DEPENDENCIES
-   sensor_msgs
-   hiob_msgs
- )
+# generate_messages(
+#   DEPENDENCIES
+#   sensor_msgs
+#   hiob_msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -106,8 +109,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES hiob_ros
+# INCLUDE_DIRS include
+# LIBRARIES hiob_ros
 #  CATKIN_DEPENDS rospy sensor_msgs
 #  DEPENDS system_lib
     CATKIN_DEPENDS message_runtime
@@ -163,10 +166,16 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+  scripts/launcher.sh
+  scripts/ros_launcher_cli.py
+  scripts/ros_launcher_gui.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+#install(PROGRAMS
+#  scripts/launcher.sh
+#  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
@@ -183,11 +192,27 @@ include_directories(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+#install(FILES
+#  scripts/launcher.sh
+#  scripts/ros_launcher_cli.py
+#  scripts/ros_launcher_gui.py
+#  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
+
+install(DIRECTORY
+  scripts/venv
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY
+  hiob/config
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+install(DIRECTORY
+  hiob/net
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 #############
 ## Testing ##

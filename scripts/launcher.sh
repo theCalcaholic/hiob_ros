@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VENV="../venv"
+VENV="./venv"
 
 
 cd "$(dirname "$0")"
