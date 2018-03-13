@@ -167,7 +167,7 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 install(PROGRAMS
-  scripts/launcher.sh
+  scripts/launcher
   scripts/ros_launcher_cli.py
   scripts/ros_launcher_gui.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
