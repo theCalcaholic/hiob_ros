@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
 
-(
-  VENV=""
+INTERPRETER="python"
 
 
-  if [ ! -z $HIOB_VENV ]; then
-    VENV="$HIOB_VENV"
-  fi
+if [ ! -z $HIOB_VENV ]; then
+  INTERPRETER="$HIOB_VENV/bin/python"
+fi
 
-  cd "$(dirname "$0")"
-  source "$HIOB_VENV/bin/activate"
+cd "$(dirname "$0")"
 
-  echo `pwd`
-
-  if [ "$1" == "--no-gui" ] ; then
-    python ./ros_launcher_cli.py
-  else
-    python ./ros_launcher_gui.py
-  fi
-)
+"$INTERPRETER" ./ros_launcher.py $@

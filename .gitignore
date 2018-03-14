@@ -5,3 +5,4 @@ venv/
 \.idea/
 
 hiob_ros\.msg
+hiob_logs/
