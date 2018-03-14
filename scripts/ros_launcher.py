@@ -7,11 +7,15 @@ import rospkg
 if __name__ == '__main__':
     if "--ros-subscribe" not in sys.argv:
         raise Exception("hiob_ros requires the argument '--ros-subscribe <ros node>'. Exiting...")
-    os.sys.path.append(os.path.dirname(__file__))
+
+    if "--ros-publish" not in sys.argv:
+        raise Exception("hiob_ros requires the argument '--ros-publish <ros node>'. Exiting...")
+
+    my_path = os.path.realpath(os.path.dirname(__file__))
+    os.sys.path.append(my_path)
 
     rp = rospkg.RosPack()
     config_path = os.path.join(rp.get_path('hiob_ros'), 'config')
-    my_path = os.path.realpath(os.path.dirname(__file__))
 
     if os.path.isdir(os.path.join(my_path, "..", "..", "..", "src")):
         print("Devel mode detected. Adjusting paths...")
