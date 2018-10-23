@@ -5,11 +5,13 @@ import rospkg
 
 
 if __name__ == '__main__':
-    if "--ros-subscribe" not in sys.argv:
-        raise Exception("hiob_ros requires the argument '--ros-subscribe <ros node>'. Exiting...")
+    if "--help" not in sys.argv:
+        print(sys.argv)
+        if "--ros-subscribe" not in sys.argv:
+            raise Exception("hiob_ros requires the argument '--ros-subscribe <ros node>'. Exiting...")
 
-    if "--ros-publish" not in sys.argv:
-        raise Exception("hiob_ros requires the argument '--ros-publish <ros node>'. Exiting...")
+        if "--ros-publish" not in sys.argv:
+            raise Exception("hiob_ros requires the argument '--ros-publish <ros node>'. Exiting...")
 
     my_path = os.path.realpath(os.path.dirname(__file__))
     os.sys.path.append(my_path)
@@ -31,10 +33,10 @@ if __name__ == '__main__':
 
     rospy.init_node("hiob", anonymous=True)
 
-    if "--no-gui" in sys.argv:
-        from hiob import hiob_cli as hiob
-        sys.argv.remove('--no-gui')
-    else:
+    if "--gui" in sys.argv:
         from hiob import hiob_gui as hiob
+        sys.argv.remove('--gui')
+    else:
+        from hiob import hiob_cli as hiob
 
     hiob.main()
