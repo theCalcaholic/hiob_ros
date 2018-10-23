@@ -17,7 +17,7 @@ if __name__ == '__main__':
     rp = rospkg.RosPack()
     config_path = os.path.join(rp.get_path('hiob_ros'), 'config')
 
-    if os.path.isdir(os.path.join(my_path, "..", "..", "..", "src")):
+    if os.path.isdir(os.path.join(my_path, "..", "hiob")):
         print("Devel mode detected. Adjusting paths...")
         os.chdir(os.path.join(my_path, '..', 'hiob'))
         config_path = 'config'
