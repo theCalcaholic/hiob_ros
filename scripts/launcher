@@ -9,7 +9,7 @@ do
     if [[ $pythonBinExpected == 1 ]];
     then
         pythonBinExpected=0;
-        INTERPRETER="${arg%*/}/bin/python"
+        INTERPRETER="$arg"
     elif [[ "$arg" == "--python" ]];
     then
         pythonBinExpected=1;
