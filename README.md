@@ -7,7 +7,7 @@ as ROS-node (network service) which can receive a video stream
 and track any given object therein.
 
 __Note:__ _This is only a server application, you need to use or write a
-client to make use of it. An example is being provided
+client to make use of it. An example client is being provided
 [here](https://github.com/theCalcaholic/hiob_example_client)._
 
 ## Requirements
