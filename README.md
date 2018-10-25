@@ -70,10 +70,11 @@ If so, you should be able to follow these steps in order to run HIOB-ROS:
     ```sh
     . ../hiob_venv/bin/activate
     ```
-5. Run HIOB-ROS `</ros/{subscribe|publish}_topic_name>` are placeholders for the topics you want to have
-    HIOB subscribe/publish to. These can technically be any strings that comply to the
-    [naming convention for ros graph resource names](https://wiki.ros.org/Names#Valid_Names) and need to be equal
-    between server and your client:
+5. Run HIOB-ROS
     ```sh
     rosrun hiob_ros launcher --ros-subscribe </ros/subscribe_topic_name> --ros-publish </ros/publish_topic_name>
     ```
+    `</ros/{subscribe|publish}_topic_name>` are placeholders for the topics you want to have
+    HIOB subscribe/publish to. These can technically be any strings that comply to the
+    [naming convention for ros graph resource names](https://wiki.ros.org/Names#Valid_Names) and need to be equal
+    between server and your client.
