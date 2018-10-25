@@ -38,7 +38,7 @@ these are the steps for installing HIOB-ROS from the terminal:
     ```
 5. Setup a virtual environment for HIOB - this needs to be
     __outside__ of the ros workspace (this step is explained in-depth in
-    the [HIOB repository](https://github.com/kratenko/HIOB)), e.g.
+    the [HIOB repository](https://github.com/kratenko/HIOB/blob/master/README.md)), e.g.
     ```
     virtualenv -p python3 ../hiob_venv
     . ../hiob_venv/bin/activate
@@ -58,18 +58,19 @@ If so, you should be able to follow these steps in order to run HIOB-ROS:
     ```sh
     . /opt/ros/kinetic/setup.bash
     . ./hiob_ros_ws/install/setup.bash
-    ``` 
-2. Enable the virtual environment you created earlier. _This step is
+    ```    
+2. Start an instance of roscore
+    ```sh
+    roscore
+    ```
+3. Open a new terminal window and repeat step 1. 
+4. Enable the virtual environment you created earlier. _This step is
     optional, as you can also pass the path to the python interpreter
     to hiob via the `--python` parameter._ E.g.
     ```sh
     . ../hiob_venv/bin/activate
     ```
-3. Start an instance of roscore (this should be executed in a separate terminal after repeating step 1)
-    ```sh
-    roscore
-    ```
-4. Run HIOB-ROS `</ros/{subscribe|publish}_topic_name>` are placeholders for the topics you want to have
+5. Run HIOB-ROS `</ros/{subscribe|publish}_topic_name>` are placeholders for the topics you want to have
     HIOB subscribe/publish to. These can technically be any strings that comply to the
     [naming convention for ros graph resource names](https://wiki.ros.org/Names#Valid_Names) and need to be equal
     between server and your client:
