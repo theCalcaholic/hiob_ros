@@ -2,11 +2,34 @@
 
 INTERPRETER="python"
 
+pythonBinExpected=0
+args=""
+for arg in $@;
+do
+    if [[ $pythonBinExpected == 1 ]];
+    then
+        pythonBinExpected=0;
+        INTERPRETER="${arg%*/}/bin/python"
+    elif [[ "$arg" == "--python" ]];
+    then
+        pythonBinExpected=1;
+    else
+       args="$args $arg"
+    fi
+done
 
-if [ ! -z $HIOB_VENV ]; then
-  INTERPRETER="$HIOB_VENV/bin/python"
-fi
+
+
+#echo "VENV: '$HIOB_VENV'"
+#HIOB_VENV=${HIOB_VENV%*/}
+
+#if [ ! -z $HIOB_VENV ]; then
+#  echo "Using virtual environment: '$HIOB_VENV'"
+#  INTERPRETER="$HIOB_VENV/bin/python"
+#fi
 
 cd "$(dirname "$0")"
 
-"$INTERPRETER" ./ros_launcher.py $@
+echo "Running \"$INTERPRETER\" ./ros_launcher.py $args"
+
+"$INTERPRETER" ./ros_launcher.py $args
