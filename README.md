@@ -56,7 +56,7 @@ these are the steps for installing HIOB-ROS from the terminal:
     # or: pip install -r hiob_ros/hiob/requirements_cpu.txt
     ```
 
-Now you should be able to continue with the [Usage](#Usage) section.
+Now you should be able to continue with the [**Usage**](#Usage) section.
 
 ## Usage
 
@@ -85,7 +85,7 @@ parameter `-e RUN_ROSCORE=true` and specify a core URI (only necessary if not ru
 
 #### Running HIOB-ROS Natively
 
-_This section assumes that you have followed the steps in [Installation](#Installation) carefully._
+_This section assumes that you have followed the steps in [**Installation**](#Installation) section carefully._
 
 If so, you should be able to follow these steps in order to run HIOB-ROS:
 
