@@ -21,7 +21,7 @@ client to make use of it. An example client is being provided
 
 ---------------------
 _The fastest way to run HIOB as a ROS service is via the provided docker image.
-If you want to do so you can skip this section and continue directly with the **Usage** section._
+If you want to do so you can skip this section and continue directly with the [**Usage**](#usage) section._
 
 ---------------------
 
