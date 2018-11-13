@@ -62,15 +62,16 @@ Now you should be able to continue with the [Usage](#Usage) section.
 
 #### Running HIOB-ROS via Docker
 
-The fastest way to run docker is by running the [docker image](https://hub.docker.com/r/thecalcaholic/hiob_ros/).
+The fastest way to run docker is running the [docker image](https://hub.docker.com/r/thecalcaholic/hiob_ros/).
 In order to do so, you need to setup [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) first and then run the
 image, for example:
 
 ```
 docker run -e RUN_ROSCORE=true -e HIOB_ROS_SUBSCRIBE=/hiob_client/myTopic -e HIOB_ROS_PUBLISH=/hiob/object --network="host" --runtime=nvidia --rm hiob_ros
 ```
-This command will download and run hiob_ros from the docker hub. The HIOB server will listen on the topic 
-`/hiob_client/myTopic` for images and publish the object position to `/hiob/object`.
+This command will download and run hiob_ros from the docker hub. If `-e RUN_ROSCORE=true` is being provided, a roscore
+node will be started together with the HIOB server. The latter will then listen on the topic `/hiob_client/myTopic`
+for images and publish the object position to `/hiob/object`.
 
 The command above acts like it was run on the host natively (because of `--network="host"`) which is the easiest
 way to spin up a ros server, but might not be your best option, if you want to host the server continuously
