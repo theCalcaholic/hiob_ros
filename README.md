@@ -69,17 +69,17 @@ image, for example:
 ```
 docker run -e RUN_ROSCORE=true -e HIOB_ROS_SUBSCRIBE=/hiob_client/myTopic -e HIOB_ROS_PUBLISH=/hiob/object --network="host" --runtime=nvidia --rm hiob_ros
 ```
-This command will download and run hiob_ros from the docker hub. If `-e RUN_ROSCORE=true` is being provided, a roscore
+This will download and run hiob_ros from the docker hub. If `-e RUN_ROSCORE=true` is being provided, a roscore
 node will be started together with the HIOB server. The latter will then listen on the topic `/hiob_client/myTopic`
 for images and publish the object position to `/hiob/object`.
 
-The command above acts like it was run on the host natively (because of `--network="host"`) which is the easiest
-way to spin up a ros server, but might not be your best option, if you want to host the server continuously
-(if you require a more controlled port setup, refer to
+The command above acts (for network purposes) like it was run on the host natively (because of `--network="host"`)
+which is the easiest way to spin up a ros server, but might not be your best option, if you want to host the server
+continuously (if you require a different port/network setup, refer to
 [the networking section of the docker docs](https://docs.docker.com/network/)).
 
-Additionally, if you have a roscore running on another machine or on the host directly, you can remove the parameter
-`-e RUN_ROSCORE=true` and specify a core URI (only necessary if not running roscore on the host or not using
+Additionally, if you have roscore already running on another machine or on the host directly, you can remove the
+parameter `-e RUN_ROSCORE=true` and specify a core URI (only necessary if not running roscore on the host or not using
 `--network="host"`) by adding `-e ROS_MASTER_URI=http://roscore-address:port/` instead.  
  
 
