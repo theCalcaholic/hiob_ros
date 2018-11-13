@@ -19,6 +19,12 @@ client to make use of it. An example client is being provided
 
 ##  Installation
 
+---------------------
+_The fastest way to run HIOB as a ROS service is via the provided docker image.
+If you want to do so you can skip this section and continue directly with the **Usage** section._
+
+---------------------
+
 Assuming that you have already installed the Requirements (see above),
 these are the steps for installing HIOB-ROS from the terminal:
 
@@ -53,6 +59,30 @@ these are the steps for installing HIOB-ROS from the terminal:
 Now you should be able to continue with the [Usage](#Usage) section.
 
 ## Usage
+
+#### Running HIOB-ROS via Docker
+
+The fastest way to run docker is by running the [docker image](https://hub.docker.com/r/thecalcaholic/hiob_ros/).
+In order to do so, you need to setup [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) first and then run the
+image, for example:
+
+```
+docker run -e RUN_ROSCORE=true -e HIOB_ROS_SUBSCRIBE=/hiob_client/myTopic -e HIOB_ROS_PUBLISH=/hiob/object --network="host" --runtime=nvidia --rm hiob_ros
+```
+This command will download and run hiob_ros from the docker hub. The HIOB server will listen on the topic 
+`/hiob_client/myTopic` for images and publish the object position to `/hiob/object`.
+
+The command above acts like it was run on the host natively (because of `--network="host"`) which is the easiest
+way to spin up a ros server, but might not be your best option, if you want to host the server continuously
+(if you require a more controlled port setup, refer to
+[the networking section of the docker docs](https://docs.docker.com/network/)).
+
+Additionally, if you have a roscore running on another machine or on the host directly, you can remove the parameter
+`-e RUN_ROSCORE=true` and specify a core URI (only necessary if not running roscore on the host or not using
+`--network="host"`) by adding `-e ROS_MASTER_URI=http://roscore-address:port/` instead.  
+ 
+
+#### Running HIOB-ROS Natively
 
 _This section assumes that you have followed the steps in [Installation](#Installation) carefully._
 
