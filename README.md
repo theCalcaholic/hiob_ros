@@ -78,9 +78,9 @@ which is the easiest way to spin up a ros server, but might not be your best opt
 continuously (if you require a different port/network setup, refer to
 [the networking section of the docker docs](https://docs.docker.com/network/)).
 
-Additionally, if you have roscore already running on another machine or on the host directly, you can remove the
-parameter `-e RUN_ROSCORE=true` and specify a core URI (only necessary if not running roscore on the host or not using
-`--network="host"`) by adding `-e ROS_MASTER_URI=http://roscore-address:port/` instead.  
+If you have roscore already running on another machine or on the host directly, you can remove the
+parameter `-e RUN_ROSCORE=true` and specify a core URI (only necessary if running roscore somewhere else than on the
+host or if not using `--network="host"`) by adding `-e ROS_MASTER_URI=http://roscore-address:port/` instead.  
  
 
 #### Running HIOB-ROS Natively
