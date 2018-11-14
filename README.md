@@ -67,7 +67,7 @@ In order to do so, you need to setup [nvidia-docker](https://github.com/NVIDIA/n
 image, for example:
 
 ```
-docker run -e RUN_ROSCORE=true -e HIOB_ROS_SUBSCRIBE=/hiob_client/myTopic -e HIOB_ROS_PUBLISH=/hiob/object --network="host" --runtime=nvidia --rm hiob_ros
+docker run -e RUN_ROSCORE=true -e HIOB_ROS_SUBSCRIBE=/hiob_client/myTopic -e HIOB_ROS_PUBLISH=/hiob/object --network="host" --runtime=nvidia --rm thecalcaholic/hiob_ros:latest
 ```
 This will download and run hiob_ros from the docker hub. If `-e RUN_ROSCORE=true` is being provided, a roscore
 node will be started together with the HIOB server. The latter will then listen on the topic `/hiob_client/myTopic`
