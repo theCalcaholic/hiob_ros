@@ -43,6 +43,10 @@ these are the steps for installing HIOB-ROS from the terminal:
     git clone https://github.com/theCalcaholic/hiob_msgs.git                     src/hiob_msgs
     ```
 4. Install the ROS dependencies with rosdep:
+    ```sh
+    rosdep install --from-paths src --ignore-src --rosdistro kinetic
+    ```
+    __Note:__ _Replace 'kinetic' by your ROS distro._
 5. Install the ROS packages with catkin
     ```sh
     catkin_make install
