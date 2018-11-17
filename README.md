@@ -113,7 +113,7 @@ If so, you should be able to follow these steps in order to run HIOB-ROS:
     ``` 
 4. Enable the virtual environment you created earlier, e.g.
     ```sh
-    . ../hiob_venv/bin/activate
+    . hiob_venv/bin/activate
     ```
     __Note:__ _Alternatively you can pass the path to the python interpreter
     to hiob via the `--python` parameter._
