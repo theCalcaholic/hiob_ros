@@ -51,6 +51,8 @@ these are the steps for installing HIOB-ROS from the terminal:
     ```sh
     catkin_make install
     ```
+    __Note:__ _This will print some syntax errors, which is because you will be using a different version of python
+    than ROS expects (see step 6). You can safely ignore these._
 6. Setup a virtual environment for HIOB - this needs to be
     __outside__ of the ROS workspace (this step is explained in-depth in
     the [HIOB repository](https://github.com/kratenko/HIOB/blob/master/README.md)), e.g.
