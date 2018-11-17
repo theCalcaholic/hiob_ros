@@ -59,8 +59,8 @@ these are the steps for installing HIOB-ROS from the terminal:
     ```
     virtualenv -p python3 ../hiob_venv
     . ../hiob_venv/bin/activate
-    pip install -r hiob_ros/hiob/requirements.txt
-    # or: pip install -r hiob_ros/hiob/requirements_cpu.txt
+    pip install -r src/hiob_ros/hiob/requirements.txt
+    # or: pip install -r src/hiob_ros/hiob/requirements_cpu.txt
     ```
 
 Now you should be able to continue with the [**Usage**](#Usage) section.
@@ -107,7 +107,7 @@ If so, you should be able to follow these steps in order to run HIOB-ROS:
 3. Open a new terminal window and source the ROS setup scripts of both the ROS distro and your ROS workspace, e.g.
     ```sh
     . /opt/ros/kinetic/setup.bash
-    . ./hiob_ros_ws/install/setup.bash
+    . hiob_ros_ws/install/setup.bash
     ``` 
 4. Enable the virtual environment you created earlier, e.g.
     ```sh
