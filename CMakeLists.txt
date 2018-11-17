@@ -9,8 +9,7 @@ project(hiob_ros)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
-  sensor_msgs
-  message_generation
+  hiob_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -113,7 +112,7 @@ catkin_package(
 # LIBRARIES hiob_ros
 #  CATKIN_DEPENDS rospy sensor_msgs
 #  DEPENDS system_lib
-    CATKIN_DEPENDS message_runtime
+#  CATKIN_DEPENDS message_runtime
 )
 
 ###########
@@ -171,10 +170,6 @@ install(PROGRAMS
   scripts/ros_launcher.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-#install(PROGRAMS
-#  scripts/launcher.sh
-#  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-#)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
