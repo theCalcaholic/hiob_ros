@@ -56,3 +56,7 @@ then
 else
   docker build --rm ./ -t hiob_ros
 fi
+
+
+rm -rf hiob_msgs
+rm -rf hiob_ros

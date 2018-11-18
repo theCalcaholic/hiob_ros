@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:1.6.0-gpu-py3
+FROM tensorflow/tensorflow:1.12.0-gpu-py3
 
 
 SHELL ["/bin/bash", "-c"]
